@@ -29,6 +29,10 @@ public class Game {
       Battle encounter = new Battle(player, enemy);
 
       encounter.start();
+
+      if (!player.isAlive()) {
+        break;
+      }
     }
   }
 
