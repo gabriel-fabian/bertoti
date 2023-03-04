@@ -5,6 +5,7 @@ import java.util.Scanner;
 import src.main.java.game.characters.Enemy;
 import src.main.java.game.characters.Player;
 import src.main.java.game.strategies.FireAttackStrategy;
+import src.main.java.game.strategies.IceAttackStrategy;
 import src.main.java.game.strategies.PhysicalAttackStrategy;
 
 public class Battle {
@@ -24,6 +25,7 @@ public class Battle {
     System.out.printf("Which attack strategy do you wanna use?: %n", enemy.getName());
     System.out.printf("1. Physical Attack %n");
     System.out.printf("2. Fire Attack %n");
+    System.out.printf("3. Ice Attack %n");
 
     int selection = scanner.nextInt();
 
@@ -33,6 +35,9 @@ public class Battle {
         break;
       case 2:
         player.setAttackStrategy(new FireAttackStrategy());
+        break;
+      case 3:
+        player.setAttackStrategy(new IceAttackStrategy());
         break;
       default:
         System.out.println("Invalid selection. Defaults to Physical");
