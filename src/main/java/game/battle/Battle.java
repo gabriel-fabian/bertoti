@@ -45,6 +45,8 @@ public class Battle {
     }
 
     while (player.isAlive() && enemy.isAlive()) {
+      System.out.println(player.getName() + " has " + player.getHealth() + " HPs" + "and " + enemy.getName() + " has " + enemy.getHealth() + " HPs");
+
       player.attack(enemy);
       if (!enemy.isAlive()) {
         break;
