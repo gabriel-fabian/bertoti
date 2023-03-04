@@ -85,7 +85,11 @@ public class Game {
       Game game = new Game(player, enemies);
       game.run();
 
-      System.out.println("Game Over!.");
+      if (!player.isAlive()) {
+        System.out.println("Game Over!.");
+      }
+
+      System.out.println("You Win!");
     }
   }
 }
