@@ -35,8 +35,16 @@ public abstract class Creature {
     return damages.getOrDefault(damageType, 0);
   }
 
+  public void setDamage(String damageType, int damage) {
+    this.damages.put(damageType, damage);
+  }
+
   public int getResistance(String damageType) {
     return resistances.getOrDefault(damageType, 0);
+  }
+
+  public void setResistance(String damageType, int damage) {
+    this.resistances.put(damageType, damage);
   }
 
   public boolean isAlive() {
