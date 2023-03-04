@@ -44,13 +44,13 @@ public class Game {
 
       // Move to factory creation
       Player player = new Player(playerName, 100, new HashMap<String, Integer>() {{
-        put("PHYSICAL", 10);
+        put("PHYSICAL", 4);
         put("FIRE", 20);
         put("ICE", 25);
       }}, new HashMap<String, Integer>() {{
         put("PHYSICAL", 5);
-        put("FIRE", 10);
-        put("ICE", 15);
+        put("FIRE", 8);
+        put("ICE", 8);
       }}, new PhysicalAttackStrategy());
 
       ArrayList<Enemy> enemies = new ArrayList<>();
@@ -59,26 +59,26 @@ public class Game {
         put("FIRE", 0);
         put("ICE", 0);
       }}, new HashMap<String, Integer>() {{
-        put("PHYSICAL", 5);
+        put("PHYSICAL", 9);
         put("FIRE", 5);
         put("ICE", 5);
       }}, new PhysicalAttackStrategy()));
       enemies.add(new Enemy("Fire Goblin", 40, new HashMap<String, Integer>() {{
         put("PHYSICAL", 3);
-        put("FIRE", 15);
+        put("FIRE", 17);
         put("ICE", 12);
       }}, new HashMap<String, Integer>() {{
-        put("PHYSICAL", 3);
+        put("PHYSICAL", 25);
         put("FIRE", 50);
-        put("ICE", 12);
+        put("ICE", 0);
       }}, new FireAttackStrategy()));
       enemies.add(new Enemy("Ice Golem", 75, new HashMap<String, Integer>() {{
         put("PHYSICAL", 3);
         put("FIRE", 15);
-        put("ICE", 22);
+        put("ICE", 24);
       }}, new HashMap<String, Integer>() {{
-        put("PHYSICAL", 0);
-        put("FIRE", 100);
+        put("PHYSICAL", 10);
+        put("FIRE", 0);
         put("ICE", 100);
       }}, new IceAttackStrategy()));
 
