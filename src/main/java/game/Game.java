@@ -44,7 +44,7 @@ public class Game {
 
       // Move to factory creation
       Player player = new Player(playerName, 100, new HashMap<String, Integer>() {{
-        put("PHYSICAL", 4);
+        put("PHYSICAL", 15);
         put("FIRE", 20);
         put("ICE", 25);
       }}, new HashMap<String, Integer>() {{
@@ -54,8 +54,8 @@ public class Game {
       }}, new PhysicalAttackStrategy());
 
       ArrayList<Enemy> enemies = new ArrayList<>();
-      enemies.add(new Enemy("Goblin", 50, new HashMap<String, Integer>() {{
-        put("PHYSICAL", 5);
+      enemies.add(new Enemy("Goblin", 45, new HashMap<String, Integer>() {{
+        put("PHYSICAL", 8);
         put("FIRE", 0);
         put("ICE", 0);
       }}, new HashMap<String, Integer>() {{
