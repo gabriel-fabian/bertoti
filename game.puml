@@ -1,0 +1,72 @@
+@startuml Game
+
+interface AttackStrategy {
+  void attack(Creature attacker, Creature target)
+}
+
+abstract class Creature {
+  -name: String
+  -health: int
+  -damages: HashMap<String, Integer>
+  -resistances: HashMap<String, Integer>
+  -attackStrategy: AttackStrategy
+  +Creature(String name, int health, HashMap<String, Integer> damages, HashMap<String, Integer> resistances, AttackStrategy attackStrategy)
+  +getName(): String
+  +getHealth(): int
+  +takeDamage(int damageAmount, String damageType): void
+  +getDamage(String damageType): int
+  +setAttackStrategy(AttackStrategy attackStrategy): void
+  +isAlive(): boolean
+  +attack(Creature target): void
+}
+
+class Player {
+  +Player(String name, int level, int experience, HashMap<String, Integer> damages, HashMap<String, Integer> resistances, AttackStrategy attackStrategy)
+}
+
+class Enemy {
+  +Enemy(String name, int health, HashMap<String, Integer> damages, HashMap<String, Integer> resistances, AttackStrategy attackStrategy)
+}
+
+class PhysicalAttackStrategy {
+  +attack(Creature attacker, Creature target): void
+}
+
+class FireAttackStrategy {
+  +attack(Creature attacker, Creature target): void
+}
+
+class IceAttackStrategy {
+  +attack(Creature attacker, Creature target): void
+}
+
+class Battle {
+  -player: Player
+  -enemy: Enemy
+  +Battle(Player player, Enemy enemy)
+  +start(): void
+}
+
+class Game {
+  -Player player
+  -List<Enemy> enemies
+  -int currentEnemyIndex
+  +Game()
+  +void start()
+  +void selectAttackStrategy(int selection)
+}
+
+class Player extends Creature
+class Enemy extends Creature
+class PhysicalAttackStrategy implements AttackStrategy
+class FireAttackStrategy implements AttackStrategy
+class IceAttackStrategy implements AttackStrategy
+Player o-- AttackStrategy
+Enemy o-- AttackStrategy
+Game o-- Player
+Game o-- Enemy
+Game o-- Battle
+Battle o-- Player
+Battle o-- Enemy
+
+@enduml
