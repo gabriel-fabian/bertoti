@@ -1,8 +1,8 @@
-package src.main.java.game.characters;
+package strategy.II.src.main.java.game.characters;
 
 import java.util.HashMap;
 
-import src.main.java.game.strategies.AttackStrategy;
+import strategy.II.src.main.java.game.strategies.AttackStrategy;
 
 public class Creature {
   private String name;

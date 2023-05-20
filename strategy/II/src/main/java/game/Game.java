@@ -1,14 +1,14 @@
-package src.main.java.game;
+package strategy.II.src.main.java.game;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Scanner;
 
-import src.main.java.game.battle.Battle;
-import src.main.java.game.characters.Creature;
-import src.main.java.game.strategies.FireAttackStrategy;
-import src.main.java.game.strategies.IceAttackStrategy;
-import src.main.java.game.strategies.PhysicalAttackStrategy;
+import strategy.II.src.main.java.game.battle.Battle;
+import strategy.II.src.main.java.game.characters.Creature;
+import strategy.II.src.main.java.game.strategies.FireAttackStrategy;
+import strategy.II.src.main.java.game.strategies.IceAttackStrategy;
+import strategy.II.src.main.java.game.strategies.PhysicalAttackStrategy;
 
 public class Game {
   private Creature player;
