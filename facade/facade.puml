@@ -1,0 +1,32 @@
+@startuml facade
+
+class PaymentFacade {
+  - pixPayment: PixPayment
+  - payPalPayment: PayPalPayment
+  - pagSeguroPayment: PagSeguroPayment
+  + PaymentFacade()
+  + pay(double, String)
+}
+
+class Main {
+  + main(String[])
+}
+
+class PixPayment {
+  + process(double)
+}
+
+class PayPalPayment {
+  + executePayment(double)
+}
+
+class PagSeguroPayment {
+  + makePayment(double)
+}
+
+Main --> PaymentFacade
+PaymentFacade --> PixPayment
+PaymentFacade --> PayPalPayment
+PaymentFacade --> PagSeguroPayment
+
+@enduml
