@@ -6,17 +6,10 @@ interface AttackStrategy {
 
 class Creature {
   -name: String
-  -health: int
-  -damages: HashMap<String, Integer>
-  -resistances: HashMap<String, Integer>
   -attackStrategy: AttackStrategy
-  +Creature(String name, int health, HashMap<String, Integer> damages, HashMap<String, Integer> resistances, AttackStrategy attackStrategy)
+  +Creature(String name, AttackStrategy attackStrategy)
   +getName(): String
-  +getHealth(): int
-  +takeDamage(int damageAmount, String damageType): void
-  +getDamage(String damageType): int
   +setAttackStrategy(AttackStrategy attackStrategy): void
-  +isAlive(): boolean
   +attack(Creature target): void
 }
 
@@ -40,9 +33,8 @@ class Battle {
 }
 
 class Game {
-  -Player player
-  -List<Creature> enemies
-  -int currentEnemyIndex
+  -player: Creature
+  -enemy: Creature
   +Game()
   +void start()
   +void selectAttackStrategy(int selection)

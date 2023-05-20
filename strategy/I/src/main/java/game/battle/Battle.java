@@ -43,24 +43,10 @@ public class Battle {
         break;
     }
 
-    while (player.isAlive() && enemy.isAlive()) {
-      System.out.println(player.getName() + " has " + player.getHealth() + " HPs" + "and " + enemy.getName() + " has " + enemy.getHealth() + " HPs");
+    player.attack(enemy);
 
-      player.attack(enemy);
-      if (!enemy.isAlive()) {
-        break;
-      }
+    enemy.attack(player);
 
-      enemy.attack(player);
-      if (!player.isAlive()) {
-        break;
-      }
-    }
-
-    if (player.isAlive()) {
-      System.out.printf("You defeated the %s!%n", enemy.getName());
-    } else {
-      System.out.printf("You've been defeated by %s...%n", enemy.getName());
-    }
+    System.out.printf("End game");
   }
 }

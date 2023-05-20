@@ -1,6 +1,6 @@
-package strategy.II.src.main.java.game.strategies;
+package src.main.java.game.strategies;
 
-import strategy.II.src.main.java.game.characters.Creature;
+import src.main.java.game.characters.Creature;
 
 public class IceAttackStrategy implements AttackStrategy {
   @Override
