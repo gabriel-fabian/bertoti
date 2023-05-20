@@ -5,17 +5,16 @@ import java.util.HashMap;
 import java.util.Scanner;
 
 import src.main.java.game.battle.Battle;
-import src.main.java.game.characters.Enemy;
-import src.main.java.game.characters.Player;
+import src.main.java.game.characters.Creature;
 import src.main.java.game.strategies.FireAttackStrategy;
 import src.main.java.game.strategies.IceAttackStrategy;
 import src.main.java.game.strategies.PhysicalAttackStrategy;
 
 public class Game {
-  private Player player;
-  private ArrayList<Enemy> enemies;
+  private Creature player;
+  private ArrayList<Creature> enemies;
 
-  public Game(Player player, ArrayList<Enemy> enemies) {
+  public Game(Creature player, ArrayList<Creature> enemies) {
     this.player = player;
     this.enemies = enemies;
   }
@@ -24,7 +23,7 @@ public class Game {
     System.out.println("Starting game!");
 
     while (!enemies.isEmpty()) {
-      Enemy enemy = enemies.remove(0);
+      Creature enemy = enemies.remove(0);
 
       Battle encounter = new Battle(player, enemy);
 
@@ -43,7 +42,7 @@ public class Game {
       String playerName = scanner.nextLine();
 
       // Move to factory creation
-      Player player = new Player(playerName, 100, new HashMap<String, Integer>() {{
+      Creature player = new Creature(playerName, 100, new HashMap<String, Integer>() {{
         put("PHYSICAL", 15);
         put("FIRE", 20);
         put("ICE", 25);
@@ -53,8 +52,8 @@ public class Game {
         put("ICE", 8);
       }}, new PhysicalAttackStrategy());
 
-      ArrayList<Enemy> enemies = new ArrayList<>();
-      enemies.add(new Enemy("Goblin", 45, new HashMap<String, Integer>() {{
+      ArrayList<Creature> enemies = new ArrayList<>();
+      enemies.add(new Creature("Goblin", 45, new HashMap<String, Integer>() {{
         put("PHYSICAL", 8);
         put("FIRE", 0);
         put("ICE", 0);
@@ -63,7 +62,7 @@ public class Game {
         put("FIRE", 5);
         put("ICE", 5);
       }}, new PhysicalAttackStrategy()));
-      enemies.add(new Enemy("Fire Goblin", 40, new HashMap<String, Integer>() {{
+      enemies.add(new Creature("Fire Goblin", 40, new HashMap<String, Integer>() {{
         put("PHYSICAL", 3);
         put("FIRE", 17);
         put("ICE", 12);
@@ -72,7 +71,7 @@ public class Game {
         put("FIRE", 50);
         put("ICE", 0);
       }}, new FireAttackStrategy()));
-      enemies.add(new Enemy("Ice Golem", 75, new HashMap<String, Integer>() {{
+      enemies.add(new Creature("Ice Golem", 75, new HashMap<String, Integer>() {{
         put("PHYSICAL", 3);
         put("FIRE", 15);
         put("ICE", 24);

@@ -4,7 +4,7 @@ interface AttackStrategy {
   void attack(Creature attacker, Creature target)
 }
 
-abstract class Creature {
+class Creature {
   -name: String
   -health: int
   -damages: HashMap<String, Integer>
@@ -18,14 +18,6 @@ abstract class Creature {
   +setAttackStrategy(AttackStrategy attackStrategy): void
   +isAlive(): boolean
   +attack(Creature target): void
-}
-
-class Player {
-  +Player(String name, int level, int experience, HashMap<String, Integer> damages, HashMap<String, Integer> resistances, AttackStrategy attackStrategy)
-}
-
-class Enemy {
-  +Enemy(String name, int health, HashMap<String, Integer> damages, HashMap<String, Integer> resistances, AttackStrategy attackStrategy)
 }
 
 class PhysicalAttackStrategy {
@@ -56,17 +48,12 @@ class Game {
   +void selectAttackStrategy(int selection)
 }
 
-class Player extends Creature
-class Enemy extends Creature
 class PhysicalAttackStrategy implements AttackStrategy
 class FireAttackStrategy implements AttackStrategy
 class IceAttackStrategy implements AttackStrategy
-Player o-- AttackStrategy
-Enemy o-- AttackStrategy
-Game o-- Player
-Game o-- Enemy
+Creature o-- AttackStrategy
+Game o-- Creature
 Game o-- Battle
-Battle o-- Player
-Battle o-- Enemy
+Battle o-- Creature
 
 @enduml

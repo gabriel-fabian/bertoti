@@ -2,17 +2,16 @@ package src.main.java.game.battle;
 
 import java.util.Scanner;
 
-import src.main.java.game.characters.Enemy;
-import src.main.java.game.characters.Player;
+import src.main.java.game.characters.Creature;
 import src.main.java.game.strategies.FireAttackStrategy;
 import src.main.java.game.strategies.IceAttackStrategy;
 import src.main.java.game.strategies.PhysicalAttackStrategy;
 
 public class Battle {
-  private Player player;
-  private Enemy enemy;
+  private Creature player;
+  private Creature enemy;
 
-  public Battle(Player player, Enemy enemy) {
+  public Battle(Creature player, Creature enemy) {
     this.player = player;
     this.enemy = enemy;
   }
