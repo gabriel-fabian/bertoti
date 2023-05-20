@@ -1,0 +1,16 @@
+@startuml singleton
+
+class Logger {
+  - instance: Logger
+  + getInstance(): Logger
+  + log(message: String): void
+}
+
+class Main {
+  + main(args: String[]): void
+}
+
+Logger --> Main
+Logger --> Logger
+
+@enduml
