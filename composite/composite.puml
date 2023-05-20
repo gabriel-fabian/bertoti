@@ -1,4 +1,4 @@
-@startuml
+@startuml Composite
 
 interface Validator {
   +validate(): void
