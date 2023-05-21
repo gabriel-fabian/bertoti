@@ -1,4 +1,4 @@
-@startuml
+@startuml observer
 
 class GroupChat {
   - members: List<GroupMember>
