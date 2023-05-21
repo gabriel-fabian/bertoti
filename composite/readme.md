@@ -18,4 +18,4 @@ If the input passes all the validators, the program will display a message indic
 
 ## Class Diagram
 
-![Diagrama PlantUML](https://github.com/gabriel-fabian/bertoti/assets/61850709/36fcf31b-f954-4bec-85a3-d533af26f50e)
+![Diagrama PlantUML](https://github.com/gabriel-fabian/bertoti/assets/61850709/bc99ecea-c021-4e94-903a-4f8756e10cc1)

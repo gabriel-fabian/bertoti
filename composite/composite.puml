@@ -34,16 +34,13 @@ class MaxLengthValidator {
   +validate(): void
 }
 
-class Main {
-  +main(args: String[]): void
-}
-
 Validator <|.. ValidatorComposite
-Validator <|-- StringValidator
-Validator <|-- MinLengthValidator
-Validator <|-- MaxLengthValidator
+Validator <|.. StringValidator
+Validator <|.. MinLengthValidator
+Validator <|.. MaxLengthValidator
 
-Main --> ValidatorComposite
-Main --> ValidationException
+StringValidator --> ValidationException
+MinLengthValidator --> ValidationException
+MaxLengthValidator --> ValidationException
 
 @enduml

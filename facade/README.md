@@ -14,4 +14,4 @@ The program provides a simplified interface for making payments using different 
 
 ## Class Diagram
 
-![Diagrama PlantUML](https://github.com/gabriel-fabian/bertoti/assets/61850709/6222e68f-e020-45ed-b7e6-5e62feb6b8dc)
+![Diagrama PlantUML](https://github.com/gabriel-fabian/bertoti/assets/61850709/ec286971-0aea-4dd8-b3cc-ba74e43ec068)
