@@ -1,0 +1,25 @@
+@startuml
+
+class GroupChat {
+  - members: List<GroupMember>
+  + addObserver(member: GroupMember): void
+  + removeObserver(member: GroupMember): void
+  + notifyObservers(message: String, sender: GroupMember): void
+}
+
+interface Observer {
+  + update(message: String): void
+}
+
+class GroupMember {
+  - name: String
+  + GroupMember(name: String)
+  + getName(): String
+  + update(message: String): void
+}
+
+class GroupMember implements Observer
+GroupChat --> GroupMember
+
+
+@enduml
